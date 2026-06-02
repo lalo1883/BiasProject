@@ -20,11 +20,13 @@
 
 ## Variables protegidas detectadas (banderas de sesgo)
 - **Raza** (foco principal del análisis), **sexo**, **edad**.
-- Proxies potenciales de raza: `priors_count` (el historial de arrestos ya viene sesgado por sobre-vigilancia).
+- Proxies potenciales de raza: `priors_count` (historial de arrestos) está **correlacionado** con la raza en estos datos. El *porqué* (sobre-vigilancia, factores socioeconómicos, etc.) NO se puede determinar con este dataset; solo observamos la correlación.
 
 ## Limitaciones / advertencias éticas
 - Solo condado de Broward → no generaliza a otras jurisdicciones.
-- `two_year_recid` mide *re-arresto*, no *re-delito* real → ya contiene sesgo de vigilancia policial.
+- `two_year_recid` mide *re-arresto*, no *re-delito* real → captura quién fue detenido de nuevo, que puede no equivaler a quién delinquió de nuevo.
+- **Disparidad ≠ sesgo automáticamente:** los datos muestran diferencias por raza; calificarlas de "sesgo" exige elegir una definición de justicia, y distintas definiciones se contradicen (resultado de imposibilidad: Kleinberg 2016, Chouldechova 2017).
+- **Lo que el dato muestra vs. lo que se interpreta:** distinguir ambos es parte del rigor de gobernanza. Las explicaciones causales requieren evidencia externa, no este dataset.
 - Datos de personas reales (aunque públicos): no reidentificar, uso solo analítico/educativo.
 
 ## Hallazgo registrado (Proceso 1)

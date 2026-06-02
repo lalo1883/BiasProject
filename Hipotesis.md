@@ -24,9 +24,11 @@ Quitamos/agregamos variables y medimos **dos cosas a la vez**:
 
 ### COMPAS (validación del método)
 - **H0 (disparidad cruda) ✅ CONFIRMADA (Proceso 1, 2026-06-01):** ya existe disparidad en la decisión humana antes de cualquier IA. Falsos positivos: Afroamericanos **42.3%** vs Caucásicos **22.0%**. Reproduce a ProPublica.
-- **H1 (pendiente — Proceso 2):** El modelo predice mejor el score de riesgo cuando se le da la raza → los humanos/el sistema usaban la raza.
-- **H2 (proxies — pendiente):** Aun quitando la raza, el modelo sigue marcando más "alto riesgo" a negros, vía arrestos previos / zona.
+- **H1 (Proceso 2) ⚠️ NO confirmada (y eso es un hallazgo):** El modelo *aware* NO imitó mejor la decisión humana (accuracy 75.7% vs 76.6% del *blind*; casi igual). Interpretación: el sistema no *necesitaba* la raza explícita porque los proxies ya la cargaban. La hipótesis simple resultó falsa → la historia real es la de proxies (H2).
+- **H2 (proxies) ✅ CONFIRMADA (Proceso 2, 2026-06-01):** El modelo BLIND, que nunca vio la raza, igual marcó "alto riesgo" a 56.5% de afroamericanos vs 28.5% de caucásicos (**brecha +27.9 pp**). "Ser ciego al color" NO elimina el sesgo. Además, darle la raza ensancha la brecha a **+42.5 pp** (la raza se usa encima de los proxies; coeficiente caucásico −0.45).
 - **H3 (amplificación — pendiente, Proceso 4):** La tasa de falsos positivos por raza del modelo es *mayor* que la del score humano original.
+- **H7 ✅ CONFIRMADA (Proceso 3, 2026-06-01):** `priors_count` es un proxy de la raza. Afroamericanos: 4.24 delitos previos promedio vs 2.29 caucásicos (**1.9×**). Al quitar el historial criminal, la brecha del modelo cae de +27.9% a **+17.4%** → el proxy explica buena parte del sesgo.
+- **H8 (hallazgo nuevo e importante):** El sesgo NO vive en una sola columna. Aun quitando raza Y historial, queda una brecha de +17.4% repartida en otras variables (edad, sexo, cargo) también correlacionadas con la raza. **El sesgo es estructural, no se elimina borrando variables.**
 
 ### ENPOL (caso mexicano)
 - **H4:** A delito comparable, las sentencias son más severas para personas con menor escolaridad / ingreso.

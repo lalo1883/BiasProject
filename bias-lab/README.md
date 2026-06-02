@@ -25,8 +25,8 @@ python3 -m venv venv
 
 ## Procesos (ver ../Procesos.md)
 1. ✅ Tasas base (COMPAS) — disparidad cruda sin IA
-2. ⬜ Blind vs Aware — el detector de sesgo
-3. ⬜ Cazando proxies
+2. ✅ Blind vs Aware — el detector de sesgo (proxies confirmados: blind igual discrimina)
+3. ✅ Cazando proxies (priors_count = proxy; sesgo residual estructural +17.4%)
 4. ⬜ Medir amplificación (clímax)
 5. ⬜ SHAP
 6. ⬜ No-supervisado (confirmación)
