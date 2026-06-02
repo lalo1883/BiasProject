@@ -22,6 +22,13 @@
 - B predice mejor → el humano usaba esa variable → sesgo.
 - A y B predicen igual PERO ambos discriminan → el sesgo entra por *proxies* (ver Proceso 3).
 
+> 📝 **Nota para principiante — cómo funciona esto en realidad:**
+> 1. Partimos los datos: una **muestra grande para aprender** (~80%) y una **chica para examinar** (~20%).
+> 2. **Aprender:** al modelo le damos los datos de cada persona JUNTO con el score humano. Ahí sí ve el score, porque lo necesita para descubrir el patrón.
+> 3. **Examinar:** le damos personas que nunca vio, SIN el score, y lo tiene que adivinar. Como nosotros sí sabemos el score real, comparamos y medimos qué tan bien aprendió.
+> 4. **Importante:** quitar la raza NO se hace después de entrenar. Se entrenan **dos modelos desde cero**: uno que nunca vio la raza (*blind*) y otro que sí (*aware*). No se le puede "sacar" la raza a un modelo ya entrenado — por eso son dos.
+> 5. Al final comparamos los dos: ¿cuál acierta más el score? ¿qué tanta diferencia hay? Esa diferencia = cuánto pesaba la raza en la decisión humana.
+
 ---
 
 ## Proceso 3 — Cazando proxies

@@ -13,6 +13,7 @@
 | 4 | Tesis central | **Amplificación**: la IA aprende y exagera el sesgo humano | Una idea memorable, contraintuitiva y demostrable con un número |
 | 5 | Entorno | **Local** (venv) ahora, Colab después | Control y aprendizaje; luego portabilidad |
 | 6 | Punto de arranque | **COMPAS primero** | Datos limpios, valida el pipeline antes de pelear con datos sucios |
+| 7 | Modelo de ML | **Regresión logística** (ver `bias-lab/docs/ADR-001`) | Interpretable > preciso; el objetivo es *explicar* el sesgo, no maximizar accuracy. XGBoost queda como prueba de robustez futura |
 
 ---
 
